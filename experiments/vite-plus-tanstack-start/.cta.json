@@ -1,0 +1,30 @@
+{
+  "projectName": "vite-plus-tanstack-start",
+  "mode": "file-router",
+  "typescript": true,
+  "packageManager": "pnpm",
+  "includeExamples": true,
+  "tailwind": true,
+  "addOnOptions": {
+    "drizzle": {
+      "database": "sqlite"
+    }
+  },
+  "envVarValues": {},
+  "git": false,
+  "install": false,
+  "routerOnly": false,
+  "version": 1,
+  "framework": "react",
+  "chosenAddOns": [
+    "cloudflare",
+    "shadcn",
+    "storybook",
+    "drizzle",
+    "better-auth",
+    "form",
+    "oRPC",
+    "events",
+    "tanstack-query"
+  ]
+}
