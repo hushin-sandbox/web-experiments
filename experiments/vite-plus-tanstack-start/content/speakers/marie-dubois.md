@@ -1,14 +1,14 @@
 ---
-name: 'Marie Dubois'
-title: 'Executive Pastry Chef'
-specialty: 'French Pastry & Tarts'
-restaurant: 'Pâtisserie Célestine'
-location: 'Paris, France'
-headshot: 'speakers/marie-dubois.jpg'
+name: "Marie Dubois"
+title: "Executive Pastry Chef"
+specialty: "French Pastry & Tarts"
+restaurant: "Pâtisserie Célestine"
+location: "Paris, France"
+headshot: "speakers/marie-dubois.jpg"
 awards:
-  - 'Meilleur Ouvrier de France 2019'
-  - 'World Pastry Cup Gold Medal 2017'
-  - 'Relais Desserts Member'
+  - "Meilleur Ouvrier de France 2019"
+  - "World Pastry Cup Gold Medal 2017"
+  - "Relais Desserts Member"
 ---
 
 Marie Dubois has been crafting exquisite French pastries for over two decades, earning her place among the world's most celebrated pâtissiers. Her journey began at the prestigious Le Cordon Bleu in Paris, where she graduated top of her class before apprenticing at Maison Ladurée under their master pastry team.

@@ -1,18 +1,18 @@
-import { createFileRoute } from '@tanstack/react-router';
-import { marked } from 'marked';
-import { MapPin, Award, ArrowLeft } from 'lucide-react';
-import { Link } from '@tanstack/react-router';
+import { createFileRoute } from "@tanstack/react-router";
+import { marked } from "marked";
+import { MapPin, Award, ArrowLeft } from "lucide-react";
+import { Link } from "@tanstack/react-router";
 
-import { allSpeakers, allTalks } from 'content-collections';
+import { allSpeakers, allTalks } from "content-collections";
 
-import RemyAssistant from '#/components/RemyAssistant';
-import TalkCard from '#/components/TalkCard';
+import RemyAssistant from "#/components/RemyAssistant";
+import TalkCard from "#/components/TalkCard";
 
-export const Route = createFileRoute('/speakers/$slug')({
+export const Route = createFileRoute("/speakers/$slug")({
   loader: async ({ params }) => {
     const speaker = allSpeakers.find((s) => s.slug === params.slug);
     if (!speaker) {
-      throw new Error('Speaker not found');
+      throw new Error("Speaker not found");
     }
     const speakerTalks = allTalks.filter((t) => t.speaker === speaker.name);
     return { speaker, speakerTalks };
@@ -64,9 +64,7 @@ function SpeakerDetailPage() {
                 {speaker.name}
               </h1>
 
-              <p className="text-2xl text-gold font-display italic mb-4">
-                {speaker.title}
-              </p>
+              <p className="text-2xl text-gold font-display italic mb-4">{speaker.title}</p>
 
               <div className="flex items-center gap-2 text-cream/60 text-lg mb-8">
                 <MapPin className="w-5 h-5 text-copper" />

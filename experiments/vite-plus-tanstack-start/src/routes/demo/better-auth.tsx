@@ -1,18 +1,18 @@
-import { createFileRoute } from '@tanstack/react-router';
-import { useState } from 'react';
-import { authClient } from '#/lib/auth-client';
+import { createFileRoute } from "@tanstack/react-router";
+import { useState } from "react";
+import { authClient } from "#/lib/auth-client";
 
-export const Route = createFileRoute('/demo/better-auth')({
+export const Route = createFileRoute("/demo/better-auth")({
   component: BetterAuthDemo,
 });
 
 function BetterAuthDemo() {
   const { data: session, isPending } = authClient.useSession();
   const [isSignUp, setIsSignUp] = useState(false);
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-  const [name, setName] = useState('');
-  const [error, setError] = useState('');
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [name, setName] = useState("");
+  const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
 
   if (isPending) {
@@ -28,9 +28,7 @@ function BetterAuthDemo() {
       <div className="flex justify-center py-10 px-4">
         <div className="w-full max-w-md p-6 space-y-6">
           <div className="space-y-1.5">
-            <h1 className="text-lg font-semibold leading-none tracking-tight">
-              Welcome back
-            </h1>
+            <h1 className="text-lg font-semibold leading-none tracking-tight">Welcome back</h1>
             <p className="text-sm text-neutral-500 dark:text-neutral-400">
               You're signed in as {session.user.email}
             </p>
@@ -42,14 +40,12 @@ function BetterAuthDemo() {
             ) : (
               <div className="h-10 w-10 bg-neutral-200 dark:bg-neutral-800 flex items-center justify-center">
                 <span className="text-sm font-medium text-neutral-600 dark:text-neutral-400">
-                  {session.user.name?.charAt(0).toUpperCase() || 'U'}
+                  {session.user.name?.charAt(0).toUpperCase() || "U"}
                 </span>
               </div>
             )}
             <div className="flex-1 min-w-0">
-              <p className="text-sm font-medium truncate">
-                {session.user.name}
-              </p>
+              <p className="text-sm font-medium truncate">{session.user.name}</p>
               <p className="text-xs text-neutral-500 dark:text-neutral-400 truncate">
                 {session.user.email}
               </p>
@@ -66,7 +62,7 @@ function BetterAuthDemo() {
           </button>
 
           <p className="text-xs text-center text-neutral-400 dark:text-neutral-500">
-            Built with{' '}
+            Built with{" "}
             <a
               href="https://better-auth.com"
               target="_blank"
@@ -84,7 +80,7 @@ function BetterAuthDemo() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setError('');
+    setError("");
     setLoading(true);
 
     try {
@@ -95,7 +91,7 @@ function BetterAuthDemo() {
           name,
         });
         if (result.error) {
-          setError(result.error.message || 'Sign up failed');
+          setError(result.error.message || "Sign up failed");
         }
       } else {
         const result = await authClient.signIn.email({
@@ -103,11 +99,11 @@ function BetterAuthDemo() {
           password,
         });
         if (result.error) {
-          setError(result.error.message || 'Sign in failed');
+          setError(result.error.message || "Sign in failed");
         }
       }
     } catch (err) {
-      setError('An unexpected error occurred');
+      setError("An unexpected error occurred");
     } finally {
       setLoading(false);
     }
@@ -117,21 +113,18 @@ function BetterAuthDemo() {
     <div className="flex justify-center py-10 px-4">
       <div className="w-full max-w-md p-6">
         <h1 className="text-lg font-semibold leading-none tracking-tight">
-          {isSignUp ? 'Create an account' : 'Sign in'}
+          {isSignUp ? "Create an account" : "Sign in"}
         </h1>
         <p className="text-sm text-neutral-500 dark:text-neutral-400 mt-2 mb-6">
           {isSignUp
-            ? 'Enter your information to create an account'
-            : 'Enter your email below to login to your account'}
+            ? "Enter your information to create an account"
+            : "Enter your email below to login to your account"}
         </p>
 
         <form onSubmit={handleSubmit} className="grid gap-4">
           {isSignUp && (
             <div className="grid gap-2">
-              <label
-                htmlFor="name"
-                className="text-sm font-medium leading-none"
-              >
+              <label htmlFor="name" className="text-sm font-medium leading-none">
                 Name
               </label>
               <input
@@ -160,10 +153,7 @@ function BetterAuthDemo() {
           </div>
 
           <div className="grid gap-2">
-            <label
-              htmlFor="password"
-              className="text-sm font-medium leading-none"
-            >
+            <label htmlFor="password" className="text-sm font-medium leading-none">
               Password
             </label>
             <input
@@ -194,9 +184,9 @@ function BetterAuthDemo() {
                 <span>Please wait</span>
               </span>
             ) : isSignUp ? (
-              'Create account'
+              "Create account"
             ) : (
-              'Sign in'
+              "Sign in"
             )}
           </button>
         </form>
@@ -206,18 +196,16 @@ function BetterAuthDemo() {
             type="button"
             onClick={() => {
               setIsSignUp(!isSignUp);
-              setError('');
+              setError("");
             }}
             className="text-sm text-neutral-500 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-neutral-100 transition-colors"
           >
-            {isSignUp
-              ? 'Already have an account? Sign in'
-              : "Don't have an account? Sign up"}
+            {isSignUp ? "Already have an account? Sign in" : "Don't have an account? Sign up"}
           </button>
         </div>
 
         <p className="mt-6 text-xs text-center text-neutral-400 dark:text-neutral-500">
-          Built with{' '}
+          Built with{" "}
           <a
             href="https://better-auth.com"
             target="_blank"

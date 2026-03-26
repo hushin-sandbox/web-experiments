@@ -1,10 +1,10 @@
-import { defineCollection, defineConfig } from '@content-collections/core';
-import { z } from 'zod';
+import { defineCollection, defineConfig } from "@content-collections/core";
+import { z } from "zod";
 
 const speakers = defineCollection({
-  name: 'speakers',
-  directory: 'content/speakers',
-  include: '**/*.md',
+  name: "speakers",
+  directory: "content/speakers",
+  include: "**/*.md",
   schema: z.object({
     name: z.string(),
     title: z.string(),
@@ -20,17 +20,17 @@ const speakers = defineCollection({
       ...doc,
       slug: doc.name
         .toLowerCase()
-        .replace(/[^\w-]+/g, '-')
-        .replace(/-+/g, '-')
-        .replace(/^-|-$/g, ''),
+        .replace(/[^\w-]+/g, "-")
+        .replace(/-+/g, "-")
+        .replace(/^-|-$/g, ""),
     };
   },
 });
 
 const talks = defineCollection({
-  name: 'talks',
-  directory: 'content/talks',
-  include: '**/*.md',
+  name: "talks",
+  directory: "content/talks",
+  include: "**/*.md",
   schema: z.object({
     title: z.string(),
     speaker: z.string(),
@@ -44,9 +44,9 @@ const talks = defineCollection({
       ...doc,
       slug: doc.title
         .toLowerCase()
-        .replace(/[^\w-]+/g, '-')
-        .replace(/-+/g, '-')
-        .replace(/^-|-$/g, ''),
+        .replace(/[^\w-]+/g, "-")
+        .replace(/-+/g, "-")
+        .replace(/^-|-$/g, ""),
     };
   },
 });

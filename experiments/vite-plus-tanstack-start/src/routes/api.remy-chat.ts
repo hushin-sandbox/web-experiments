@@ -1,9 +1,9 @@
-import { createFileRoute } from '@tanstack/react-router';
-import { chat, maxIterations, toServerSentEventsResponse } from '@tanstack/ai';
-import { anthropicText } from '@tanstack/ai-anthropic';
-import { openaiText } from '@tanstack/ai-openai';
-import { geminiText } from '@tanstack/ai-gemini';
-import { ollamaText } from '@tanstack/ai-ollama';
+import { createFileRoute } from "@tanstack/react-router";
+import { chat, maxIterations, toServerSentEventsResponse } from "@tanstack/ai";
+import { anthropicText } from "@tanstack/ai-anthropic";
+import { openaiText } from "@tanstack/ai-openai";
+import { geminiText } from "@tanstack/ai-gemini";
+import { ollamaText } from "@tanstack/ai-ollama";
 
 import {
   getSpeakerBySlug,
@@ -11,9 +11,9 @@ import {
   getAllSpeakers,
   getAllTalks,
   searchConference,
-} from '#/lib/conference-tools';
+} from "#/lib/conference-tools";
 
-export const Route = createFileRoute('/api/remy-chat')({
+export const Route = createFileRoute("/api/remy-chat")({
   server: {
     handlers: {
       POST: async ({ request }) => {
@@ -53,45 +53,38 @@ INSTRUCTIONS:
 - Keep responses conversational but informative
 - When recommending sessions, explain why they might be interesting based on the user's query
 
-${speakerSlug ? `CONTEXT: The user is viewing the profile of the speaker with slug "${speakerSlug}".` : ''}
-${talkSlug ? `CONTEXT: The user is viewing the session with slug "${talkSlug}".` : ''}
+${speakerSlug ? `CONTEXT: The user is viewing the profile of the speaker with slug "${speakerSlug}".` : ""}
+${talkSlug ? `CONTEXT: The user is viewing the session with slug "${talkSlug}".` : ""}
 
 Remember: You are the friendly face of Haute Pâtisserie 2026. Make every attendee feel welcome and excited about the culinary journey ahead!`;
 
           // Determine the best available provider
-          let provider: string = 'ollama';
-          let model: string = 'mistral:7b';
+          let provider: string = "ollama";
+          let model: string = "mistral:7b";
           if (process.env.ANTHROPIC_API_KEY) {
-            provider = 'anthropic';
-            model = 'claude-haiku-4-5';
+            provider = "anthropic";
+            model = "claude-haiku-4-5";
           } else if (process.env.OPENAI_API_KEY) {
-            provider = 'openai';
-            model = 'gpt-4o';
+            provider = "openai";
+            model = "gpt-4o";
           } else if (process.env.GEMINI_API_KEY) {
-            provider = 'gemini';
-            model = 'gemini-2.0-flash-exp';
+            provider = "gemini";
+            model = "gemini-2.0-flash-exp";
           }
 
           // Adapter factory pattern for multi-vendor support
           const adapterConfig = {
-            anthropic: () =>
-              anthropicText((model || 'claude-haiku-4-5') as any),
-            openai: () => openaiText((model || 'gpt-4o') as any),
-            gemini: () => geminiText((model || 'gemini-2.0-flash-exp') as any),
-            ollama: () => ollamaText((model || 'mistral:7b') as any),
+            anthropic: () => anthropicText((model || "claude-haiku-4-5") as any),
+            openai: () => openaiText((model || "gpt-4o") as any),
+            gemini: () => geminiText((model || "gemini-2.0-flash-exp") as any),
+            ollama: () => ollamaText((model || "mistral:7b") as any),
           };
 
           const adapter = adapterConfig[provider]();
 
           const stream = chat({
             adapter,
-            tools: [
-              getSpeakerBySlug,
-              getTalkBySlug,
-              getAllSpeakers,
-              getAllTalks,
-              searchConference,
-            ],
+            tools: [getSpeakerBySlug, getTalkBySlug, getAllSpeakers, getAllTalks, searchConference],
             systemPrompts: [SYSTEM_PROMPT],
             agentLoopStrategy: maxIterations(5),
             messages,
@@ -100,18 +93,18 @@ Remember: You are the friendly face of Haute Pâtisserie 2026. Make every attend
 
           return toServerSentEventsResponse(stream, { abortController });
         } catch (error: any) {
-          console.error('Remy chat error:', error);
-          if (error.name === 'AbortError' || abortController.signal.aborted) {
+          console.error("Remy chat error:", error);
+          if (error.name === "AbortError" || abortController.signal.aborted) {
             return new Response(null, { status: 499 });
           }
           return new Response(
             JSON.stringify({
-              error: 'Failed to process chat request',
+              error: "Failed to process chat request",
               message: error.message,
             }),
             {
               status: 500,
-              headers: { 'Content-Type': 'application/json' },
+              headers: { "Content-Type": "application/json" },
             },
           );
         }

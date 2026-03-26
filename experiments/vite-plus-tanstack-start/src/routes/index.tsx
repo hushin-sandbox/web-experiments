@@ -1,14 +1,14 @@
-import { createFileRoute, Link } from '@tanstack/react-router';
-import { ArrowRight, Calendar, MapPin, Users } from 'lucide-react';
+import { createFileRoute, Link } from "@tanstack/react-router";
+import { ArrowRight, Calendar, MapPin, Users } from "lucide-react";
 
-import { allSpeakers, allTalks } from 'content-collections';
+import { allSpeakers, allTalks } from "content-collections";
 
-import SpeakerCard from '#/components/SpeakerCard';
-import TalkCard from '#/components/TalkCard';
-import RemyAssistant from '#/components/RemyAssistant';
-import HeroCarousel from '#/components/HeroCarousel';
+import SpeakerCard from "#/components/SpeakerCard";
+import TalkCard from "#/components/TalkCard";
+import RemyAssistant from "#/components/RemyAssistant";
+import HeroCarousel from "#/components/HeroCarousel";
 
-export const Route = createFileRoute('/')({
+export const Route = createFileRoute("/")({
   component: HomePage,
 });
 
@@ -42,34 +42,23 @@ function HomePage() {
           </h1>
 
           <p className="text-xl md:text-2xl text-cream/70 font-body max-w-3xl mx-auto mb-10 leading-relaxed">
-            Join the world's most celebrated pastry chefs and master bakers for
-            three extraordinary days of masterclasses, demonstrations, and
-            culinary inspiration.
+            Join the world's most celebrated pastry chefs and master bakers for three extraordinary
+            days of masterclasses, demonstrations, and culinary inspiration.
           </p>
 
           {/* Stats */}
           <div className="flex flex-wrap justify-center gap-8 mb-12">
             <div className="text-center">
-              <div className="text-4xl font-display font-bold text-gold">
-                {allSpeakers.length}
-              </div>
-              <div className="text-cream/50 text-sm uppercase tracking-wider">
-                Master Chefs
-              </div>
+              <div className="text-4xl font-display font-bold text-gold">{allSpeakers.length}</div>
+              <div className="text-cream/50 text-sm uppercase tracking-wider">Master Chefs</div>
             </div>
             <div className="text-center">
-              <div className="text-4xl font-display font-bold text-gold">
-                {allTalks.length}
-              </div>
-              <div className="text-cream/50 text-sm uppercase tracking-wider">
-                Sessions
-              </div>
+              <div className="text-4xl font-display font-bold text-gold">{allTalks.length}</div>
+              <div className="text-cream/50 text-sm uppercase tracking-wider">Sessions</div>
             </div>
             <div className="text-center">
               <div className="text-4xl font-display font-bold text-gold">3</div>
-              <div className="text-cream/50 text-sm uppercase tracking-wider">
-                Days
-              </div>
+              <div className="text-cream/50 text-sm uppercase tracking-wider">Days</div>
             </div>
           </div>
 
@@ -189,8 +178,8 @@ function HomePage() {
                 Ready to Elevate Your Craft?
               </h2>
               <p className="text-cream/60 text-lg font-body mb-8 max-w-2xl mx-auto">
-                Join us in Paris for an unforgettable experience with the
-                world's finest pastry artisans.
+                Join us in Paris for an unforgettable experience with the world's finest pastry
+                artisans.
               </p>
               <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gold/10 border border-gold/30 text-gold text-sm font-medium">
                 <span>🥐</span>

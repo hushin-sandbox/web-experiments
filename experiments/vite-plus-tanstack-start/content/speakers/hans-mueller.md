@@ -1,14 +1,14 @@
 ---
-name: 'Hans Mueller'
-title: 'Master Baker'
-specialty: 'Viennoiserie & Laminated Doughs'
-restaurant: 'Das Brotwerk'
-location: 'Munich, Germany'
-headshot: 'speakers/hans-mueller.jpg'
+name: "Hans Mueller"
+title: "Master Baker"
+specialty: "Viennoiserie & Laminated Doughs"
+restaurant: "Das Brotwerk"
+location: "Munich, Germany"
+headshot: "speakers/hans-mueller.jpg"
 awards:
-  - 'German Master Baker Certification'
-  - 'Coupe du Monde de la Boulangerie Silver 2016'
-  - 'Austrian Chamber of Commerce Gold Medal'
+  - "German Master Baker Certification"
+  - "Coupe du Monde de la Boulangerie Silver 2016"
+  - "Austrian Chamber of Commerce Gold Medal"
 ---
 
 Hans Mueller represents the sixth generation of his family to pursue the art of baking, carrying forward a tradition that began in a small Austrian village in 1847. His mastery of laminated doughs — the painstaking process of folding butter into dough to create hundreds of flaky layers — is considered unparalleled in the German-speaking world.

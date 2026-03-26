@@ -1,11 +1,11 @@
-import { createFileRoute } from '@tanstack/react-router';
+import { createFileRoute } from "@tanstack/react-router";
 
-import { allSpeakers } from 'content-collections';
+import { allSpeakers } from "content-collections";
 
-import SpeakerCard from '#/components/SpeakerCard';
-import RemyAssistant from '#/components/RemyAssistant';
+import SpeakerCard from "#/components/SpeakerCard";
+import RemyAssistant from "#/components/RemyAssistant";
 
-export const Route = createFileRoute('/speakers/')({
+export const Route = createFileRoute("/speakers/")({
   component: SpeakersPage,
 });
 
@@ -18,12 +18,11 @@ function SpeakersPage() {
         <div className="relative py-16 px-6">
           <div className="max-w-7xl mx-auto text-center">
             <h1 className="font-display text-5xl md:text-6xl font-bold text-cream mb-4">
-              Our <span className="text-gold italic">Distinguished</span>{' '}
-              Speakers
+              Our <span className="text-gold italic">Distinguished</span> Speakers
             </h1>
             <p className="text-xl text-cream/70 max-w-2xl mx-auto font-body">
-              Meet the world-renowned pastry chefs and master bakers who will
-              share their expertise at Haute Pâtisserie 2026.
+              Meet the world-renowned pastry chefs and master bakers who will share their expertise
+              at Haute Pâtisserie 2026.
             </p>
           </div>
         </div>

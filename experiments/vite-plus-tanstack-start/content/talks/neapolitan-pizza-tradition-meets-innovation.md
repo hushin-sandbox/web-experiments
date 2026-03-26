@@ -1,12 +1,12 @@
 ---
-title: 'Neapolitan Pizza: Tradition Meets Innovation'
-speaker: 'Isabella Martinez'
-duration: '90 minutes'
-image: 'talks/neapolitan-pizza-tradition-meets-innovation.jpg'
+title: "Neapolitan Pizza: Tradition Meets Innovation"
+speaker: "Isabella Martinez"
+duration: "90 minutes"
+image: "talks/neapolitan-pizza-tradition-meets-innovation.jpg"
 topics:
-  - 'Pizza'
-  - 'Bread'
-  - 'Italian'
+  - "Pizza"
+  - "Bread"
+  - "Italian"
 ---
 
 Isabella Martinez brings her sourdough expertise to one of the world's most beloved breads: Neapolitan pizza. This session explores how natural fermentation and artisanal approaches can elevate pizza while honoring — and sometimes gently challenging — traditional methods.

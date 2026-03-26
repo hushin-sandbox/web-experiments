@@ -1,14 +1,14 @@
 ---
-name: 'Kenji Nakamura'
-title: 'Creative Director of Pastry'
-specialty: 'Japanese-French Fusion'
-restaurant: 'Umami Flour'
-location: 'Kyoto, Japan'
-headshot: 'speakers/kenji-nakamura.jpg'
+name: "Kenji Nakamura"
+title: "Creative Director of Pastry"
+specialty: "Japanese-French Fusion"
+restaurant: "Umami Flour"
+location: "Kyoto, Japan"
+headshot: "speakers/kenji-nakamura.jpg"
 awards:
   - "Asia's Best Pastry Chef 2022"
-  - 'James Beard Rising Star 2018'
-  - 'Tokyo Pastry Academy Distinguished Alumni'
+  - "James Beard Rising Star 2018"
+  - "Tokyo Pastry Academy Distinguished Alumni"
 ---
 
 Kenji Nakamura stands at the fascinating intersection of Japanese precision and French artistry. His unique perspective emerged from a childhood spent between his grandmother's traditional wagashi shop in Kyoto and summers visiting his aunt's Parisian boulangerie — an upbringing that would define his revolutionary approach to pastry.

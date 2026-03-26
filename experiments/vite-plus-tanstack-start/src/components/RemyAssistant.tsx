@@ -1,18 +1,17 @@
-import { useEffect, useRef, useState } from 'react';
-import { Send, X, ChefHat, Croissant } from 'lucide-react';
-import { Streamdown } from 'streamdown';
-import { Store } from '@tanstack/store';
+import { useEffect, useRef, useState } from "react";
+import { Send, X, ChefHat, Croissant } from "lucide-react";
+import { Streamdown } from "streamdown";
+import { Store } from "@tanstack/store";
 
-import { useConferenceChat } from '#/lib/conference-ai-hook';
-import type { ConferenceChatMessages } from '#/lib/conference-ai-hook';
+import { useConferenceChat } from "#/lib/conference-ai-hook";
+import type { ConferenceChatMessages } from "#/lib/conference-ai-hook";
 
 function Messages({ messages }: { messages: ConferenceChatMessages }) {
   const messagesContainerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     if (messagesContainerRef.current) {
-      messagesContainerRef.current.scrollTop =
-        messagesContainerRef.current.scrollHeight;
+      messagesContainerRef.current.scrollTop = messagesContainerRef.current.scrollHeight;
     }
   }, [messages]);
 
@@ -27,8 +26,8 @@ function Messages({ messages }: { messages: ConferenceChatMessages }) {
           Bonjour! I'm Remy 👨‍🍳
         </p>
         <p className="text-xs text-cream/40 mt-2 text-center max-w-[220px]">
-          Your culinary guide to Haute Pâtisserie 2026. Ask about speakers,
-          sessions, or pastry techniques!
+          Your culinary guide to Haute Pâtisserie 2026. Ask about speakers, sessions, or pastry
+          techniques!
         </p>
       </div>
     );
@@ -40,16 +39,16 @@ function Messages({ messages }: { messages: ConferenceChatMessages }) {
         <div
           key={id}
           className={`py-3 ${
-            role === 'assistant'
-              ? 'bg-gradient-to-r from-copper/5 via-gold/5 to-copper/5'
-              : 'bg-transparent'
+            role === "assistant"
+              ? "bg-gradient-to-r from-copper/5 via-gold/5 to-copper/5"
+              : "bg-transparent"
           }`}
         >
           {parts.map((part, index) => {
-            if (part.type === 'text' && part.content) {
+            if (part.type === "text" && part.content) {
               return (
                 <div key={index} className="flex items-start gap-3 px-4">
-                  {role === 'assistant' ? (
+                  {role === "assistant" ? (
                     <div className="w-7 h-7 rounded-full bg-gradient-to-br from-copper via-copper-dark to-gold flex items-center justify-center text-xs font-bold text-charcoal flex-shrink-0 shadow-lg shadow-copper/20">
                       👨‍🍳
                     </div>
@@ -81,17 +80,10 @@ interface RemyAssistantProps {
 // Export store for header control
 export const showRemyAssistant = new Store(false);
 
-export default function RemyAssistant({
-  speakerSlug,
-  talkSlug,
-  contextTitle,
-}: RemyAssistantProps) {
+export default function RemyAssistant({ speakerSlug, talkSlug, contextTitle }: RemyAssistantProps) {
   const [isOpen, setIsOpen] = useState(false);
-  const { messages, sendMessage, isLoading } = useConferenceChat(
-    speakerSlug,
-    talkSlug,
-  );
-  const [input, setInput] = useState('');
+  const { messages, sendMessage, isLoading } = useConferenceChat(speakerSlug, talkSlug);
+  const [input, setInput] = useState("");
 
   // Sync with store for header control
   useEffect(() => {
@@ -109,7 +101,7 @@ export default function RemyAssistant({
   const handleSend = () => {
     if (input.trim()) {
       sendMessage(input);
-      setInput('');
+      setInput("");
     }
   };
 
@@ -127,13 +119,9 @@ export default function RemyAssistant({
             <span className="text-lg">👨‍🍳</span>
           </div>
           <div>
-            <h3 className="font-display font-bold text-cream text-base tracking-tight">
-              Remy
-            </h3>
+            <h3 className="font-display font-bold text-cream text-base tracking-tight">Remy</h3>
             {contextTitle && (
-              <p className="text-xs text-copper/70 truncate max-w-[220px]">
-                🥐 {contextTitle}
-              </p>
+              <p className="text-xs text-copper/70 truncate max-w-[220px]">🥐 {contextTitle}</p>
             )}
           </div>
         </div>
@@ -178,19 +166,14 @@ export default function RemyAssistant({
               disabled={isLoading}
               className="w-full rounded-xl border border-copper/20 bg-charcoal-light/50 pl-4 pr-12 py-3 text-sm text-cream placeholder-cream/30 focus:outline-none focus:ring-2 focus:ring-copper/40 focus:border-transparent resize-none overflow-hidden disabled:opacity-50 transition-all"
               rows={1}
-              style={{ minHeight: '48px', maxHeight: '100px' }}
+              style={{ minHeight: "48px", maxHeight: "100px" }}
               onInput={(e) => {
                 const target = e.target as HTMLTextAreaElement;
-                target.style.height = 'auto';
-                target.style.height = Math.min(target.scrollHeight, 100) + 'px';
+                target.style.height = "auto";
+                target.style.height = Math.min(target.scrollHeight, 100) + "px";
               }}
               onKeyDown={(e) => {
-                if (
-                  e.key === 'Enter' &&
-                  !e.shiftKey &&
-                  input.trim() &&
-                  !isLoading
-                ) {
+                if (e.key === "Enter" && !e.shiftKey && input.trim() && !isLoading) {
                   e.preventDefault();
                   handleSend();
                 }

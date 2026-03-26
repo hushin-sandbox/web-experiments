@@ -1,28 +1,28 @@
-import { createFileRoute } from '@tanstack/react-router';
-import { useState } from 'react';
+import { createFileRoute } from "@tanstack/react-router";
+import { useState } from "react";
 
-import { Dialog } from '#/components/storybook/dialog';
-import { Input } from '#/components/storybook/input';
-import { RadioGroup } from '#/components/storybook/radio-group';
-import { Slider } from '#/components/storybook/slider';
-import { Button } from '#/components/storybook/button';
+import { Dialog } from "#/components/storybook/dialog";
+import { Input } from "#/components/storybook/input";
+import { RadioGroup } from "#/components/storybook/radio-group";
+import { Slider } from "#/components/storybook/slider";
+import { Button } from "#/components/storybook/button";
 
-export const Route = createFileRoute('/demo/storybook')({
+export const Route = createFileRoute("/demo/storybook")({
   component: StorybookDemo,
 });
 
 function StorybookDemo() {
-  const [firstName, setFirstName] = useState('');
-  const [lastName, setLastName] = useState('');
-  const [employmentType, setEmploymentType] = useState('full-time');
+  const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");
+  const [employmentType, setEmploymentType] = useState("full-time");
   const [coffeeCups, setCoffeeCups] = useState(3);
 
   const handleSubmit = () => {};
 
   const handleReset = () => {
-    setFirstName('');
-    setLastName('');
-    setEmploymentType('full-time');
+    setFirstName("");
+    setLastName("");
+    setEmploymentType("full-time");
     setCoffeeCups(3);
   };
 
@@ -36,12 +36,7 @@ function StorybookDemo() {
               <Button variant="secondary" size="medium" onClick={handleReset}>
                 Reset
               </Button>
-              <Button
-                variant="primary"
-                size="medium"
-                type="submit"
-                onClick={handleSubmit}
-              >
+              <Button variant="primary" size="medium" type="submit" onClick={handleSubmit}>
                 Submit
               </Button>
             </div>
@@ -70,8 +65,8 @@ function StorybookDemo() {
               label="Employment Type"
               name="employmentType"
               options={[
-                { value: 'full-time', label: 'Full Time' },
-                { value: 'part-time', label: 'Part Time' },
+                { value: "full-time", label: "Full Time" },
+                { value: "part-time", label: "Part Time" },
               ]}
               value={employmentType}
               onChange={setEmploymentType}

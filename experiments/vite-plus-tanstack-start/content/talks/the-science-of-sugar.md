@@ -1,12 +1,12 @@
 ---
-title: 'The Science of Sugar'
-speaker: 'Priya Sharma'
-duration: '90 minutes'
-image: 'talks/the-science-of-sugar.jpg'
+title: "The Science of Sugar"
+speaker: "Priya Sharma"
+duration: "90 minutes"
+image: "talks/the-science-of-sugar.jpg"
 topics:
-  - 'Molecular Gastronomy'
-  - 'Sugar Work'
-  - 'Science'
+  - "Molecular Gastronomy"
+  - "Sugar Work"
+  - "Science"
 ---
 
 Priya Sharma merges her biochemistry background with pastry artistry to demystify sugar — the ingredient that defines confectionery. This session transforms abstract chemistry into practical knowledge that will change how you approach every sweet creation.

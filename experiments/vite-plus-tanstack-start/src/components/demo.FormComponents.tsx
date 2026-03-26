@@ -1,14 +1,14 @@
-import { useStore } from '@tanstack/react-form';
+import { useStore } from "@tanstack/react-form";
 
-import { useFieldContext, useFormContext } from '#/hooks/demo.form-context';
+import { useFieldContext, useFormContext } from "#/hooks/demo.form-context";
 
-import { Button } from '#/components/ui/button';
-import { Input } from '#/components/ui/input';
-import { Textarea as ShadcnTextarea } from '#/components/ui/textarea';
-import * as ShadcnSelect from '#/components/ui/select';
-import { Slider as ShadcnSlider } from '#/components/ui/slider';
-import { Switch as ShadcnSwitch } from '#/components/ui/switch';
-import { Label } from '#/components/ui/label';
+import { Button } from "#/components/ui/button";
+import { Input } from "#/components/ui/input";
+import { Textarea as ShadcnTextarea } from "#/components/ui/textarea";
+import * as ShadcnSelect from "#/components/ui/select";
+import { Slider as ShadcnSlider } from "#/components/ui/slider";
+import { Switch as ShadcnSwitch } from "#/components/ui/switch";
+import { Label } from "#/components/ui/label";
 
 export function SubscribeButton({ label }: { label: string }) {
   const form = useFormContext();
@@ -23,32 +23,22 @@ export function SubscribeButton({ label }: { label: string }) {
   );
 }
 
-function ErrorMessages({
-  errors,
-}: {
-  errors: Array<string | { message: string }>;
-}) {
+function ErrorMessages({ errors }: { errors: Array<string | { message: string }> }) {
   return (
     <>
       {errors.map((error) => (
         <div
-          key={typeof error === 'string' ? error : error.message}
+          key={typeof error === "string" ? error : error.message}
           className="text-red-500 mt-1 font-bold"
         >
-          {typeof error === 'string' ? error : error.message}
+          {typeof error === "string" ? error : error.message}
         </div>
       ))}
     </>
   );
 }
 
-export function TextField({
-  label,
-  placeholder,
-}: {
-  label: string;
-  placeholder?: string;
-}) {
+export function TextField({ label, placeholder }: { label: string; placeholder?: string }) {
   const field = useFieldContext<string>();
   const errors = useStore(field.store, (state) => state.meta.errors);
 
@@ -68,13 +58,7 @@ export function TextField({
   );
 }
 
-export function TextArea({
-  label,
-  rows = 3,
-}: {
-  label: string;
-  rows?: number;
-}) {
+export function TextArea({ label, rows = 3 }: { label: string; rows?: number }) {
   const field = useFieldContext<string>();
   const errors = useStore(field.store, (state) => state.meta.errors);
 

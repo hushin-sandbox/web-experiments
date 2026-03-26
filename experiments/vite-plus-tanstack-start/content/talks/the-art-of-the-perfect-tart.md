@@ -1,12 +1,12 @@
 ---
-title: 'The Art of the Perfect Tart'
-speaker: 'Marie Dubois'
-duration: '90 minutes'
-image: 'talks/the-art-of-the-perfect-tart.jpg'
+title: "The Art of the Perfect Tart"
+speaker: "Marie Dubois"
+duration: "90 minutes"
+image: "talks/the-art-of-the-perfect-tart.jpg"
 topics:
-  - 'Tarts'
-  - 'French Pastry'
-  - 'Technique'
+  - "Tarts"
+  - "French Pastry"
+  - "Technique"
 ---
 
 Join Marie Dubois for an immersive journey into the soul of French pâtisserie — the tart. In this masterclass, Marie will reveal the techniques that have made her Tarte Céleste a destination dessert, breaking down each component from crust to crown.

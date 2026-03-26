@@ -1,5 +1,5 @@
-import { ChefHat, ChevronRight } from 'lucide-react';
-import { showRemyAssistant } from './RemyAssistant';
+import { ChefHat, ChevronRight } from "lucide-react";
+import { showRemyAssistant } from "./RemyAssistant";
 
 export default function RemyButton() {
   return (

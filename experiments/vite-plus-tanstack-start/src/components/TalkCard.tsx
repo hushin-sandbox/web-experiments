@@ -1,9 +1,9 @@
-import { Link } from '@tanstack/react-router';
-import { Clock, User } from 'lucide-react';
+import { Link } from "@tanstack/react-router";
+import { Clock, User } from "lucide-react";
 
-import { type Talk } from 'content-collections';
+import { type Talk } from "content-collections";
 
-import { Card, CardContent } from '#/components/ui/card';
+import { Card, CardContent } from "#/components/ui/card";
 
 interface TalkCardProps {
   talk: Talk;
@@ -15,16 +15,12 @@ export default function TalkCard({ talk, featured = false }: TalkCardProps) {
     <Link to={`/talks/${talk.slug}`} className="group relative block">
       <Card
         className={`relative overflow-hidden bg-card border-border/50 card-hover
-          ${featured ? 'aspect-[16/10]' : 'aspect-[16/9]'}
+          ${featured ? "aspect-[16/10]" : "aspect-[16/9]"}
           hover:border-gold/50`}
       >
         {/* Image */}
         <div className="absolute inset-0">
-          <img
-            src={`/${talk.image}`}
-            alt={talk.title}
-            className="w-full h-full object-cover"
-          />
+          <img src={`/${talk.image}`} alt={talk.title} className="w-full h-full object-cover" />
           <div className="absolute inset-0 bg-gradient-to-t from-charcoal via-charcoal/60 to-transparent" />
         </div>
 

@@ -1,15 +1,15 @@
-import { toolDefinition } from '@tanstack/ai';
-import { z } from 'zod';
+import { toolDefinition } from "@tanstack/ai";
+import { z } from "zod";
 
-import { allSpeakers, allTalks } from 'content-collections';
+import { allSpeakers, allTalks } from "content-collections";
 
 // Tool definition for getting a speaker by slug
 export const getSpeakerBySlugToolDef = toolDefinition({
-  name: 'getSpeakerBySlug',
+  name: "getSpeakerBySlug",
   description:
-    'Get the full profile and bio of a specific speaker. Use this when asked about a particular speaker.',
+    "Get the full profile and bio of a specific speaker. Use this when asked about a particular speaker.",
   inputSchema: z.object({
-    slug: z.string().describe('The slug of the speaker'),
+    slug: z.string().describe("The slug of the speaker"),
   }),
   outputSchema: z.object({
     name: z.string(),
@@ -27,12 +27,12 @@ export const getSpeakerBySlug = getSpeakerBySlugToolDef.server(({ slug }) => {
   const speaker = allSpeakers.find((s) => s.slug === slug);
   if (!speaker) {
     return {
-      name: 'Speaker not found',
-      title: '',
-      specialty: '',
-      restaurant: '',
-      location: '',
-      bio: 'The requested speaker was not found.',
+      name: "Speaker not found",
+      title: "",
+      specialty: "",
+      restaurant: "",
+      location: "",
+      bio: "The requested speaker was not found.",
       awards: [],
     };
   }
@@ -49,11 +49,11 @@ export const getSpeakerBySlug = getSpeakerBySlugToolDef.server(({ slug }) => {
 
 // Tool definition for getting a talk by slug
 export const getTalkBySlugToolDef = toolDefinition({
-  name: 'getTalkBySlug',
+  name: "getTalkBySlug",
   description:
-    'Get the full details of a specific session/talk. Use this when asked about a particular session.',
+    "Get the full details of a specific session/talk. Use this when asked about a particular session.",
   inputSchema: z.object({
-    slug: z.string().describe('The slug of the talk'),
+    slug: z.string().describe("The slug of the talk"),
   }),
   outputSchema: z.object({
     title: z.string(),
@@ -69,11 +69,11 @@ export const getTalkBySlug = getTalkBySlugToolDef.server(({ slug }) => {
   const talk = allTalks.find((t) => t.slug === slug);
   if (!talk) {
     return {
-      title: 'Session not found',
-      speaker: '',
-      duration: '',
+      title: "Session not found",
+      speaker: "",
+      duration: "",
       topics: [],
-      description: 'The requested session was not found.',
+      description: "The requested session was not found.",
     };
   }
   return {
@@ -87,9 +87,9 @@ export const getTalkBySlug = getTalkBySlugToolDef.server(({ slug }) => {
 
 // Tool definition for listing all speakers
 export const getAllSpeakersToolDef = toolDefinition({
-  name: 'getAllSpeakers',
+  name: "getAllSpeakers",
   description:
-    'Get a list of all speakers at the conference with their names, specialties, and restaurants.',
+    "Get a list of all speakers at the conference with their names, specialties, and restaurants.",
   inputSchema: z.object({}),
   outputSchema: z.array(
     z.object({
@@ -115,9 +115,9 @@ export const getAllSpeakers = getAllSpeakersToolDef.server(() => {
 
 // Tool definition for listing all talks
 export const getAllTalksToolDef = toolDefinition({
-  name: 'getAllTalks',
+  name: "getAllTalks",
   description:
-    'Get a list of all sessions/talks at the conference with their titles, speakers, and topics.',
+    "Get a list of all sessions/talks at the conference with their titles, speakers, and topics.",
   inputSchema: z.object({}),
   outputSchema: z.array(
     z.object({
@@ -143,11 +143,11 @@ export const getAllTalks = getAllTalksToolDef.server(() => {
 
 // Tool definition for searching conference content
 export const searchConferenceToolDef = toolDefinition({
-  name: 'searchConference',
+  name: "searchConference",
   description:
-    'Search for speakers or sessions by keyword. Use this to find content matching user queries about topics, techniques, or names.',
+    "Search for speakers or sessions by keyword. Use this to find content matching user queries about topics, techniques, or names.",
   inputSchema: z.object({
-    query: z.string().describe('The search query'),
+    query: z.string().describe("The search query"),
   }),
   outputSchema: z.object({
     speakers: z.array(

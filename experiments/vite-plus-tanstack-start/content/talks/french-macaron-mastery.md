@@ -1,12 +1,12 @@
 ---
-title: 'French Macaron Mastery'
-speaker: 'Marie Dubois'
-duration: '120 minutes'
-image: 'talks/french-macaron-mastery.jpg'
+title: "French Macaron Mastery"
+speaker: "Marie Dubois"
+duration: "120 minutes"
+image: "talks/french-macaron-mastery.jpg"
 topics:
-  - 'Macarons'
-  - 'French Pastry'
-  - 'Confections'
+  - "Macarons"
+  - "French Pastry"
+  - "Confections"
 ---
 
 Marie Dubois confronts the pastry world's most temperamental confection: the French macaron. In this comprehensive session, she shares the methods that produce consistent, beautiful macarons at Pâtisserie Célestine — and troubleshoots the many ways they can go wrong.

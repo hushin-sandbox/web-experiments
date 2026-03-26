@@ -1,11 +1,11 @@
-import { createFileRoute } from '@tanstack/react-router';
+import { createFileRoute } from "@tanstack/react-router";
 
-import { allTalks } from 'content-collections';
+import { allTalks } from "content-collections";
 
-import TalkCard from '#/components/TalkCard';
-import RemyAssistant from '#/components/RemyAssistant';
+import TalkCard from "#/components/TalkCard";
+import RemyAssistant from "#/components/RemyAssistant";
 
-export const Route = createFileRoute('/talks/')({
+export const Route = createFileRoute("/talks/")({
   component: TalksPage,
 });
 
@@ -21,8 +21,8 @@ function TalksPage() {
               Conference <span className="text-gold italic">Sessions</span>
             </h1>
             <p className="text-xl text-cream/70 max-w-2xl mx-auto font-body">
-              Immerse yourself in masterclasses and demonstrations covering
-              every aspect of artisan baking and pastry.
+              Immerse yourself in masterclasses and demonstrations covering every aspect of artisan
+              baking and pastry.
             </p>
           </div>
         </div>

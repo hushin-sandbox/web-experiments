@@ -1,12 +1,12 @@
-import { createFileRoute, Link } from '@tanstack/react-router';
-import { Clock, Calendar, MapPin, ChevronRight } from 'lucide-react';
-import { useState } from 'react';
+import { createFileRoute, Link } from "@tanstack/react-router";
+import { Clock, Calendar, MapPin, ChevronRight } from "lucide-react";
+import { useState } from "react";
 
-import { allTalks, allSpeakers } from 'content-collections';
+import { allTalks, allSpeakers } from "content-collections";
 
-import RemyAssistant from '#/components/RemyAssistant';
+import RemyAssistant from "#/components/RemyAssistant";
 
-export const Route = createFileRoute('/schedule/')({
+export const Route = createFileRoute("/schedule/")({
   component: SchedulePage,
 });
 
@@ -19,36 +19,36 @@ function getSpeakerByName(name: string) {
 const scheduleData = [
   {
     day: 1,
-    date: 'March 15, 2026',
-    dayName: 'Day One',
-    theme: 'French Foundations',
+    date: "March 15, 2026",
+    dayName: "Day One",
+    theme: "French Foundations",
     sessions: [
-      { time: '9:00 AM', talkSlug: 'french-macaron-mastery' },
-      { time: '11:30 AM', talkSlug: 'croissant-lamination-secrets' },
-      { time: '3:00 PM', talkSlug: 'the-science-of-sugar' },
+      { time: "9:00 AM", talkSlug: "french-macaron-mastery" },
+      { time: "11:30 AM", talkSlug: "croissant-lamination-secrets" },
+      { time: "3:00 PM", talkSlug: "the-science-of-sugar" },
     ],
   },
   {
     day: 2,
-    date: 'March 16, 2026',
-    dayName: 'Day Two',
-    theme: 'Global Traditions',
+    date: "March 16, 2026",
+    dayName: "Day Two",
+    theme: "Global Traditions",
     sessions: [
-      { time: '9:00 AM', talkSlug: 'sourdough-from-starter-to-masterpiece' },
-      { time: '11:30 AM', talkSlug: 'umami-in-pastry-east-meets-west' },
-      { time: '2:30 PM', talkSlug: 'savory-breads-of-the-mediterranean' },
+      { time: "9:00 AM", talkSlug: "sourdough-from-starter-to-masterpiece" },
+      { time: "11:30 AM", talkSlug: "umami-in-pastry-east-meets-west" },
+      { time: "2:30 PM", talkSlug: "savory-breads-of-the-mediterranean" },
     ],
   },
   {
     day: 3,
-    date: 'March 17, 2026',
-    dayName: 'Day Three',
-    theme: 'Artisan Mastery',
+    date: "March 17, 2026",
+    dayName: "Day Three",
+    theme: "Artisan Mastery",
     sessions: [
-      { time: '9:00 AM', talkSlug: 'the-art-of-the-perfect-tart' },
+      { time: "9:00 AM", talkSlug: "the-art-of-the-perfect-tart" },
       {
-        time: '11:00 AM',
-        talkSlug: 'neapolitan-pizza-tradition-meets-innovation',
+        time: "11:00 AM",
+        talkSlug: "neapolitan-pizza-tradition-meets-innovation",
       },
     ],
   },
@@ -77,8 +77,8 @@ function SchedulePage() {
               Conference <span className="text-gold italic">Schedule</span>
             </h1>
             <p className="text-xl text-cream/70 max-w-2xl mx-auto font-body">
-              Three days of masterclasses, demonstrations, and culinary
-              inspiration from the world's finest pastry artisans.
+              Three days of masterclasses, demonstrations, and culinary inspiration from the world's
+              finest pastry artisans.
             </p>
           </div>
         </div>
@@ -93,15 +93,15 @@ function SchedulePage() {
                   onClick={() => setSelectedDay(day.day)}
                   className={`relative px-8 py-4 rounded-xl font-display font-semibold transition-all duration-300 ${
                     selectedDay === day.day
-                      ? 'bg-gradient-to-br from-copper to-copper-dark text-charcoal shadow-lg shadow-copper/20'
-                      : 'text-cream/70 hover:text-cream hover:bg-card'
+                      ? "bg-gradient-to-br from-copper to-copper-dark text-charcoal shadow-lg shadow-copper/20"
+                      : "text-cream/70 hover:text-cream hover:bg-card"
                   }`}
                 >
                   <span className="block text-xs uppercase tracking-wider opacity-75">
                     {day.dayName}
                   </span>
                   <span className="block text-lg">
-                    {day.date.split(',')[0].split(' ').slice(0, 2).join(' ')}
+                    {day.date.split(",")[0].split(" ").slice(0, 2).join(" ")}
                   </span>
                 </button>
               ))}
@@ -113,7 +113,7 @@ function SchedulePage() {
         <div className="max-w-7xl mx-auto px-6 mb-8">
           <div className="text-center">
             <h2 className="font-display text-3xl font-bold text-cream mb-2">
-              {currentDayData.dayName}:{' '}
+              {currentDayData.dayName}:{" "}
               <span className="text-gold italic">{currentDayData.theme}</span>
             </h2>
             <p className="text-cream/50 font-body">{currentDayData.date}</p>
@@ -135,11 +135,7 @@ function SchedulePage() {
                 const speaker = getSpeakerByName(talk.speaker);
 
                 return (
-                  <Link
-                    key={session.talkSlug}
-                    to={`/talks/${talk.slug}`}
-                    className="group block"
-                  >
+                  <Link key={session.talkSlug} to={`/talks/${talk.slug}`} className="group block">
                     <div className="relative flex gap-6 md:gap-10">
                       {/* Time marker */}
                       <div className="flex-shrink-0 w-16 md:w-24 pt-6">
@@ -210,9 +206,7 @@ function SchedulePage() {
 
                             {/* Speaker & Duration */}
                             <div className="flex flex-wrap items-center gap-4 text-cream/60 text-sm mb-3">
-                              <span className="font-medium text-copper-light">
-                                {talk.speaker}
-                              </span>
+                              <span className="font-medium text-copper-light">{talk.speaker}</span>
                               <div className="flex items-center gap-1.5">
                                 <Clock className="w-3.5 h-3.5" />
                                 <span>{talk.duration}</span>
@@ -254,8 +248,7 @@ function SchedulePage() {
                 Don't Miss a Single Session
               </h3>
               <p className="text-cream/60 font-body mb-6 max-w-xl mx-auto">
-                Each masterclass offers hands-on learning from the world's
-                finest pastry artisans.
+                Each masterclass offers hands-on learning from the world's finest pastry artisans.
               </p>
               <div className="flex flex-wrap justify-center gap-4">
                 <Link

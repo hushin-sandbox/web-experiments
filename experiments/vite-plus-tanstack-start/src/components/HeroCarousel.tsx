@@ -1,10 +1,10 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect } from "react";
 
 const backgrounds = [
-  '/background-1.jpg',
-  '/background-2.jpg',
-  '/background-3.jpg',
-  '/background-4.jpg',
+  "/background-1.jpg",
+  "/background-2.jpg",
+  "/background-3.jpg",
+  "/background-4.jpg",
 ];
 
 export default function HeroCarousel() {
@@ -24,7 +24,7 @@ export default function HeroCarousel() {
         <div
           key={bg}
           className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${
-            index === currentIndex ? 'opacity-100' : 'opacity-0'
+            index === currentIndex ? "opacity-100" : "opacity-0"
           }`}
         >
           <img src={bg} alt="" className="w-full h-full object-cover" />
@@ -44,9 +44,7 @@ export default function HeroCarousel() {
             key={index}
             onClick={() => setCurrentIndex(index)}
             className={`w-2 h-2 rounded-full transition-all duration-300 ${
-              index === currentIndex
-                ? 'bg-gold w-6'
-                : 'bg-cream/30 hover:bg-cream/50'
+              index === currentIndex ? "bg-gold w-6" : "bg-cream/30 hover:bg-cream/50"
             }`}
             aria-label={`Go to slide ${index + 1}`}
           />

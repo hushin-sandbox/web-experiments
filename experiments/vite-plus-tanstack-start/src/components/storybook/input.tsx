@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 
 export interface InputProps {
   label: string;
@@ -13,18 +13,15 @@ export interface InputProps {
 export const Input: React.FC<InputProps> = ({
   label,
   id,
-  value = '',
+  value = "",
   onChange,
   placeholder,
   required = false,
-  className = '',
+  className = "",
 }) => {
   return (
     <div className={`flex flex-col gap-2 ${className}`}>
-      <label
-        htmlFor={id}
-        className="text-sm font-medium text-gray-700 dark:text-gray-200"
-      >
+      <label htmlFor={id} className="text-sm font-medium text-gray-700 dark:text-gray-200">
         {label}
         {required && <span className="text-red-500 ml-1">*</span>}
       </label>
