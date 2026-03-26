@@ -55,6 +55,10 @@ vp check でエラーになる箇所を除外する
   },
 ```
 
+https://www.content-collections.dev/docs/quickstart/tanstack-start
+
+.content-collections を .gitignore に追加
+
 ## メモ
 
 - add-ons の種類が豊富
