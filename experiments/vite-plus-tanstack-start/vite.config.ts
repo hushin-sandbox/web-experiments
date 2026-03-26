@@ -12,7 +12,7 @@ import contentCollections from "@content-collections/vite";
 const config = defineConfig({
   lint: { options: { typeAware: true, typeCheck: true } },
   fmt: {
-    ignorePatterns: [".content-collections/**"],
+    ignorePatterns: [".content-collections/**", "src/routeTree.gen.ts"],
   },
   plugins: [
     devtools(),
