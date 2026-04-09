@@ -44,25 +44,7 @@ experiments/react/
 
 ### テンプレート
 
-````md
-## 概要
-
-- 技術:
-- URL:
-
-## セットアップ
-
-```bash
-pnpm create ...
-cd ...
-pnpm install
-pnpm dev
-```
-
-## メモ
-
--
-````
+[NOTE_TEMPLATE.md](./NOTE_TEMPLATE.md)
 
 ### 目的
 

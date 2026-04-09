@@ -27,6 +27,7 @@
 ### 必須
 
 - 各プロジェクトに `NOTE.md` を作成する
+  - テンプレート NOTE_TEMPLATE.md
 - package manager はプロジェクトごとに自由
 
 ### 初期セットアップ
