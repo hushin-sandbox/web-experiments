@@ -1,36 +1,24 @@
-# Cloudflare Workers
+## Cloudflare Workers
 
-STOP. Your knowledge of Cloudflare Workers APIs and limits may be outdated. Always retrieve current documentation before any Workers, KV, R2, D1, Durable Objects, Queues, Vectorize, AI, or Agents SDK task.
-
-## Docs
-
-- https://developers.cloudflare.com/workers/
-- MCP: `https://docs.mcp.cloudflare.com/mcp`
-
-For all limits and quotas, retrieve from the product's `/platform/limits/` page. eg. `/workers/platform/limits`
+See [docs/cloudflare-workers.md](docs/cloudflare-workers.md) for API references, limits, and error handling.
 
 ## Commands
 
-| Command                  | Purpose                   |
-| ------------------------ | ------------------------- |
-| `pnpm dev`               | Local development         |
-| `pnpm run deploy`        | Deploy to Cloudflare      |
-| `pnpm run cf-typegen`    | Generate TypeScript types |
-| `pnpm run build`         | Production build          |
-| `pnpm run check`         | Type check + build + dry-run deploy |
+| Command               | Purpose                             |
+| --------------------- | ----------------------------------- |
+| `pnpm dev`            | Local development                   |
+| `pnpm run deploy`     | Deploy to Cloudflare                |
+| `pnpm run cf-typegen` | Generate TypeScript types           |
+| `pnpm run build`      | Production build                    |
+| `pnpm run check`      | Type check + build + dry-run deploy |
 
 Run `pnpm run cf-typegen` after changing bindings in wrangler.jsonc.
 
-## Node.js Compatibility
+## Quality Checks
 
-https://developers.cloudflare.com/workers/runtime-apis/nodejs/
-
-## Errors
-
-- **Error 1102** (CPU/Memory exceeded): Retrieve limits from `/workers/platform/limits/`
-- **All errors**: https://developers.cloudflare.com/workers/observability/errors/
-
-## Product Docs
-
-Retrieve API references and limits from:
-`/kv/` · `/r2/` · `/d1/` · `/durable-objects/` · `/queues/` · `/vectorize/` · `/workers-ai/` · `/agents/`
+| Command          | Purpose                       |
+| ---------------- | ----------------------------- |
+| `pnpm run lint`  | Lint (Oxlint via Vite+)       |
+| `pnpm run fmt`   | Format (Vite+)                |
+| `pnpm run test`  | Run tests (Vitest via Vite+)  |
+| `pnpm run check` | lint + build + dry-run deploy |

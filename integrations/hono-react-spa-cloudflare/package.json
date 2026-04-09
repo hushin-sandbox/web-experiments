@@ -9,8 +9,10 @@
     "check": "pnpm lint && vp build && wrangler deploy --dry-run",
     "deploy": "pnpm build && wrangler deploy",
     "dev": "vp dev",
+    "fmt": "vp fmt",
     "lint": "vp lint .",
-    "preview": "pnpm build && vp preview"
+    "preview": "pnpm build && vp preview",
+    "test": "vp test"
   },
   "dependencies": {
     "hono": "4.11.1",
