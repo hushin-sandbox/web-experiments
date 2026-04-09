@@ -9,6 +9,12 @@
 pnpm create cloudflare@latest hono-react-spa-cloudflare --template=cloudflare/templates/vite-react-template
 ```
 
+https://developers.cloudflare.com/agents/model-context-protocol/mcp-servers-for-cloudflare/
+
+```bash
+npx skills add https://github.com/cloudflare/skills
+```
+
 ## メモ
 
 - [RPC - Hono](https://hono.dev/docs/guides/rpc) を導入済み
