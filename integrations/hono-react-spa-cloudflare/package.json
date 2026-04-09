@@ -6,7 +6,7 @@
   "scripts": {
     "build": "tsc -b && vp build",
     "cf-typegen": "wrangler types",
-    "check": "tsc && vp build && wrangler deploy --dry-run",
+    "check": "pnpm lint && vp build && wrangler deploy --dry-run",
     "deploy": "pnpm build && wrangler deploy",
     "dev": "vp dev",
     "lint": "vp lint .",
