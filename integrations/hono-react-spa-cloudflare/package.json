@@ -7,10 +7,10 @@
     "build": "tsc -b && vp build",
     "cf-typegen": "wrangler types",
     "check": "tsc && vp build && wrangler deploy --dry-run",
-    "deploy": "wrangler deploy",
+    "deploy": "pnpm build && wrangler deploy",
     "dev": "vp dev",
     "lint": "vp lint .",
-    "preview": "npm run build && vp preview"
+    "preview": "pnpm build && vp preview"
   },
   "dependencies": {
     "hono": "4.11.1",
