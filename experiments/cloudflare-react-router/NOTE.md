@@ -10,3 +10,5 @@ pnpm create cloudflare@latest cloudflare-react-router --framework=react-router
 ```
 
 ## メモ
+
+- ドキュメントに書かれているように、SPAではない
